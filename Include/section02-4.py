@@ -26,7 +26,7 @@ def main():
     # 딕셔너리 확인
     # print(urls)
 
-    결과 출력
+    # 결과 출력
     for name, url in urls.items():
         print(name, url)
 
@@ -46,12 +46,12 @@ def scrape_news_list_page(response):
     # css의 선택자만 넣으면 됨
     # 제일 앞부터 자손으로 타고 들어감
     # 슬러시두개// 이건 전체문서라는 뜻
-    for a in root.xpath('//ul[@class="api_list"]/li[@class="api_item"]/a[@class="api_link"]'):
+    for a in root.xpath('//ul[@class="list_theme"]/li[@class="theme_item"]/a[@class="theme_thumb"]'):
         # a 구조 확인
-       # print(a)
+       # print(type(a))
         # a 문자열 출력
-        # print(tostring(a, pretty_print=True))
-        # return urls
+        #c = tostring(a, pretty_print=True)
+        # print(type(c))
         name, url = extract_contents(a)
         # 딕셔너리 삽입
         urls[name] = url
@@ -61,12 +61,11 @@ def scrape_news_list_page(response):
 def extract_contents(dom):
     # 링크 주소
     link = dom.get('href')
-    print(link)
-    # 신문사 명
+    # print(link)
+    # 제목 명
     name = dom.xpath('./img')[0].get('alt')  # 리스트로 넘어옴
-
+    # print(name)
     return name, link
-
 
     # 스크래핑 시작
 if __name__ == "__main__":
