@@ -16,7 +16,7 @@ for num in [1001, 1012, 1013, 1014]:
     params.append(dict(ctxCd=num))
 
 # 중간 확인
-# print(params)
+print(params)
 
 # 연속해서 4회 요청
 for c in params:
@@ -24,7 +24,7 @@ for c in params:
     # print(c)
     # URL 인코딩
     param = urllib.parse.urlencode(c)
-    # print(param)
+    print(param)
 
     # URL 완성
     url = API + "?" + param
@@ -41,4 +41,4 @@ for c in params:
     contents = res_data.decode('utf-8')
 
     # 출력
-    print(contents)
+    # print(contents)
