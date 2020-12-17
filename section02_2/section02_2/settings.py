@@ -1,4 +1,4 @@
-# Scrapy settings for section01_2 project
+# Scrapy settings for section02_2 project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'section01_2'
+BOT_NAME = 'section02_2'
 
-SPIDER_MODULES = ['section01_2.spiders']
-NEWSPIDER_MODULE = 'section01_2.spiders'
+SPIDER_MODULES = ['section02_2.spiders']
+NEWSPIDER_MODULE = 'section02_2.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'section01_2 (+http://www.yourdomain.com)'
+#USER_AGENT = 'section02_2 (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -45,13 +45,13 @@ DOWNLOAD_DELAY = 1
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 # SPIDER_MIDDLEWARES = {
-#    'section01_2.middlewares.Section012SpiderMiddleware': 543,
+#    'section02_2.middlewares.Section022SpiderMiddleware': 543,
 # }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 # DOWNLOADER_MIDDLEWARES = {
-#    'section01_2.middlewares.Section012DownloaderMiddleware': 543,
+#    'section02_2.middlewares.Section022DownloaderMiddleware': 543,
 # }
 
 # Enable or disable extensions
@@ -63,7 +63,7 @@ DOWNLOAD_DELAY = 1
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 # ITEM_PIPELINES = {
-#    'section01_2.pipelines.Section012Pipeline': 300,
+#    'section02_2.pipelines.Section022Pipeline': 300,
 # }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

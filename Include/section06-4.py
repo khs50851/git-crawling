@@ -114,19 +114,23 @@ while cur_page <= target_crawl_num:
             else:
                 prod_name = v.select('div.prod_main_info > div.prod_info > p.prod_name > a')[
                     0].text.strip()
-                # print(v.select('div.prod_main_info > div.prod_info > p.prod_name > a')[0].text.strip())
+                # print(v.select('div.prod_main_info > div.prod_info > p.prod_name > a')[
+                #       0].text.strip())
+
                 prod_price = v.select('p.price_sect > a')[0].text.strip()
 
                 # 이미지 요청 후 바이트 변환
-                img_data = BytesIO(req.urlopen(
-                    v.select('a.thumb_link > img')[0]['data-origin']).read())
 
-                # 엑셀 저장(텍스트)
+                img_data = BytesIO(req.urlopen(
+                    v.select('a.thumb_link > img')[0]['src']).read())
+
+                # # 엑셀 저장(텍스트)
                 worksheet.write('A%s' % insert_cnt, prod_name)
                 worksheet.write('B%s' % insert_cnt, prod_price)
 
                 # 엑셀 저장(이미지)
                 # 두번째 매개변수는 이미지의 이름을 받음 세번째는 딕셔너리 형태로 정해져있음
+
                 worksheet.insert_image('C%s' % insert_cnt, prod_name, {
                                        'image_data': img_data})
 
@@ -140,7 +144,7 @@ while cur_page <= target_crawl_num:
     print()
 
     # 페이지 별 스크린 샷 저장
-    browser.save_screenshot('C:/target_page{}.png'.format(cur_page))
+    # browser.save_screenshot('C:/target_page{}.png'.format(cur_page))
 
     # 페이지 증가
     cur_page += 1
